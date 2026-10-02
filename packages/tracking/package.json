@@ -1,0 +1,31 @@
+{
+  "name": "@marketplace/tracking",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "turbo": {
+    "build": {
+      "outputs": []
+    }
+  },
+  "dependencies": {
+    "@marketplace/data": "workspace:*",
+    "server-only": "^0.0.1"
+  },
+  "peerDependencies": {
+    "next": "^15"
+  },
+  "devDependencies": {
+    "@marketplace/config": "workspace:*",
+    "@types/node": "^20",
+    "next": "15.5.27",
+    "typescript": "^5"
+  }
+}

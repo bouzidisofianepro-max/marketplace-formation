@@ -1,0 +1,42 @@
+{
+  "name": "@marketplace/data",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./browser": "./src/browser.ts",
+    "./server": "./src/server.ts",
+    "./middleware": "./src/middleware.ts",
+    "./service": "./src/service.ts",
+    "./access": "./src/access.ts",
+    "./queries": "./src/queries.ts",
+    "./centre": "./src/centre.ts",
+    "./database.types": "./src/database.types.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "turbo": {
+    "build": {
+      "outputs": []
+    }
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.58.0",
+    "server-only": "^0.0.1"
+  },
+  "peerDependencies": {
+    "next": "^15",
+    "react": "^19"
+  },
+  "devDependencies": {
+    "@marketplace/config": "workspace:*",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "next": "15.5.27",
+    "react": "19.1.0",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@marketplace/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/nextjs.json": "./tsconfig/nextjs.json",
+    "./tsconfig/react-library.json": "./tsconfig/react-library.json",
+    "./eslint/next": "./eslint/next.mjs",
+    "./tailwind/preset": "./tailwind/preset.mjs",
+    "./next": "./next/base.mjs"
+  },
+  "dependencies": {
+    "@eslint/eslintrc": "^3",
+    "@next/env": "15.5.27",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.27"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

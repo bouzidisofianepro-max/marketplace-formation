@@ -1,0 +1,28 @@
+---
+description: Architecture du monorepo Marketplace Formation
+alwaysApply: true
+---
+
+# Architecture
+
+- Toute lecture ou écriture Supabase passe par `packages/data`. Une app n'importe jamais `@supabase/supabase-js` ni `@supabase/ssr`.
+- Le code utilisé par plus d'une app va dans `packages/`.
+- Le design (couleurs, mise en page, composants visuels propres à un site) reste dans l'app.
+- `SUPABASE_SERVICE_ROLE_KEY` et le client service role restent côté serveur. Jamais dans un composant client, un fichier `"use client"`, ni une variable `NEXT_PUBLIC_`.
+- La base Supabase existe déjà. Ne pas recréer ni modifier les tables sans demander.
+
+```ts
+// ❌ dans apps/backoffice ou apps/principal
+import { createClient } from "@supabase/supabase-js";
+
+// ✅
+import { createClient } from "@marketplace/data/server";
+import { createServiceRoleClient } from "@marketplace/data/service";
+```
+
+```ts
+// ❌ composant client
+import { createServiceRoleClient } from "@marketplace/data/service";
+
+// ✅ le module service importe "server-only" : il ne se charge que sur le serveur
+```

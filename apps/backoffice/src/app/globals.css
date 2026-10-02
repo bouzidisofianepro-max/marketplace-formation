@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "@marketplace/ui/globals.css";
+@config "../../tailwind.config.mjs";
+
+@theme {
+  --color-navy: #2b52e8;
+  --color-navy-deep: #1d3ec4;
+  --color-ocean: #2b52e8;
+  --color-sky: #5d86f0;
+  --color-glacier: #e8f0ff;
+  --color-foam: #eef6fc;
+  --color-mist: #f4f8fb;
+  --color-ink: #16324d;
+  --color-muted: #5d7388;
+  --color-line: #d5e3ef;
+}
+
+body {
+  background: var(--color-mist);
+  color: var(--color-ink);
+}
